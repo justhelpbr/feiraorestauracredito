@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feirão Restaura Crédito — JustHelp | 24 de Abril às 18h</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#030d1a;--navy2:#071422;--navy3:#0c1e35;
+  --red:#e5352a;--red2:#ff4a3d;
+  --white:#eef3ff;--muted:#6a85aa;
+  --border:rgba(255,255,255,.07);--gold:#f0b429;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* TICKER */
+.ticker{background:var(--red);padding:9px 0;overflow:hidden;white-space:nowrap;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+.t-track{display:inline-flex;animation:tkr 30s linear infinite}
+.t-track span{padding:0 30px}
+.t-track span::before{content:'◆';margin-right:30px;opacity:.4;font-size:7px;vertical-align:middle}
+@keyframes tkr{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(3,13,26,.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,5vw,4rem)}
+.nav-logo{height:40px;width:auto;display:block}
+.nav-cta{background:var(--red);color:#fff;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;padding:10px 22px;border-radius:7px;border:none;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--red2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:clamp(4rem,9vw,7rem) clamp(1rem,5vw,4rem);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:var(--navy2)}
+.orb{position:absolute;width:650px;height:650px;border-radius:50%;background:radial-gradient(circle,rgba(229,53,42,.16) 0%,transparent 68%);top:-15%;left:-8%;animation:float 9s ease-in-out infinite alternate}
+@keyframes float{from{transform:translate(0,0)}to{transform:translate(50px,35px)}}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:52px 52px}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,transparent 35%,rgba(3,13,26,.75) 100%)}
+
+.hero-inner{position:relative;z-index:1;max-width:860px;margin:0 auto;width:100%}
+
+.event-tag{display:inline-flex;align-items:center;gap:9px;background:rgba(229,53,42,.1);border:1px solid rgba(229,53,42,.3);border-radius:40px;padding:7px 18px;font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#ff8a84;margin-bottom:2rem}
+.pulse{width:7px;height:7px;background:var(--red2);border-radius:50%;animation:pulse 1.5s ease infinite}
+@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(229,53,42,.5)}60%{transform:scale(1.3);box-shadow:0 0 0 5px rgba(229,53,42,0)}}
+
+.hero-kicker{font-family:'Syne',sans-serif;font-size:clamp(12px,1.5vw,14px);font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
+
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,11vw,120px);line-height:.9;letter-spacing:1px;margin-bottom:1.4rem}
+.h1-w{display:block;color:var(--white)}
+.h1-r{display:block;color:var(--red);text-shadow:0 0 100px rgba(229,53,42,.3)}
+.h1-o{display:block;-webkit-text-stroke:1.5px rgba(255,255,255,.2);color:transparent}
+
+.hero-copy{font-size:clamp(16px,2vw,19px);color:rgba(238,243,255,.68);line-height:1.75;max-width:580px;margin-bottom:1rem}
+.hero-copy strong{color:var(--white);font-weight:600}
+
+.hero-copy2{font-size:clamp(14px,1.8vw,16px);color:rgba(238,243,255,.5);line-height:1.7;max-width:540px;margin-bottom:2.5rem;font-style:italic}
+
+.btn-tg{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--red) 0%,var(--red2) 100%);color:#fff;font-family:'Syne',sans-serif;font-size:clamp(14px,2vw,17px);font-weight:800;letter-spacing:.3px;padding:18px 42px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 10px 40px rgba(229,53,42,.45);transition:transform .2s,box-shadow .2s;margin-bottom:1.4rem}
+.btn-tg:hover{transform:translateY(-3px);box-shadow:0 18px 55px rgba(229,53,42,.6)}
+
+.hero-urgency{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--gold);font-weight:500}
+.hero-urgency::before{content:'⚠';font-size:14px}
+
+.date-row{display:flex;align-items:center;gap:10px;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--border);font-size:14px;color:var(--muted)}
+.date-row strong{color:rgba(238,243,255,.85);font-weight:600}
+.date-row svg{opacity:.5}
+
+/* COUNTDOWN */
+.cd{background:var(--navy3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:clamp(2.5rem,5vw,4rem) 1rem;text-align:center}
+.cd-label{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:1.2rem}
+.cd-row{display:inline-flex;align-items:flex-end;gap:clamp(.6rem,2.5vw,1.8rem)}
+.cd-unit{display:flex;flex-direction:column;align-items:center;gap:5px}
+.cd-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,11vw,96px);line-height:1;color:var(--white);min-width:2ch;text-align:center}
+.cd-l{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.cd-sep{font-family:'Bebas Neue',sans-serif;font-size:76px;color:var(--red);opacity:.35;line-height:1;padding-bottom:22px}
+
+/* WHY JOIN */
+.section{padding:clamp(4rem,8vw,7rem) clamp(1rem,5vw,4rem)}
+.s-inner{max-width:1100px;margin:0 auto}
+.eyebrow{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:.9rem}
+.big-h{font-family:'Syne',sans-serif;font-size:clamp(26px,4vw,46px);font-weight:800;line-height:1.1;margin-bottom:.8rem}
+.big-h em{color:var(--red);font-style:normal}
+.section-lead{font-size:clamp(15px,1.8vw,17px);color:var(--muted);line-height:1.75;max-width:580px;margin-bottom:3rem}
+
+/* PAIN SECTION */
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--border);border-radius:18px;overflow:hidden;border:1px solid var(--border);margin-bottom:4rem}
+.pain-card{background:var(--navy2);padding:2rem 1.8rem;transition:background .3s}
+.pain-card:hover{background:var(--navy3)}
+.pain-icon{font-size:28px;margin-bottom:.8rem}
+.pain-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:.5rem}
+.pain-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* WHAT YOU GET */
+.get-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.get-card{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:2rem 1.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+.get-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.get-card:hover{border-color:rgba(229,53,42,.28);transform:translateY(-4px)}
+.get-card:hover::before{transform:scaleX(1)}
+.get-num{font-family:'Bebas Neue',sans-serif;font-size:52px;color:rgba(229,53,42,.12);line-height:1;margin-bottom:.4rem}
+.get-title{font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:.5rem}
+.get-text{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* WHO IS FOR */
+.who{background:var(--navy3);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:clamp(4rem,8vw,6rem) clamp(1rem,5vw,4rem)}
+.who-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+.who-list{list-style:none;display:flex;flex-direction:column;gap:1rem}
+.who-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.55}
+.who-list li::before{content:'✓';color:var(--red);font-weight:700;font-size:16px;margin-top:1px;flex-shrink:0}
+.who-list.no li::before{content:'✗';color:rgba(229,53,42,.45)}
+.who-list.no li{color:var(--muted)}
+
+/* STATS */
+.stats{padding:clamp(3rem,6vw,5rem) clamp(1rem,5vw,4rem)}
+.stats-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.stat{background:var(--navy2);padding:2.2rem 1.2rem;text-align:center;transition:background .3s}
+.stat:hover{background:var(--navy3)}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:clamp(42px,6vw,66px);color:var(--red);line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:6px;font-weight:500}
+
+/* FINAL CTA */
+.final{padding:clamp(5rem,10vw,9rem) clamp(1rem,5vw,4rem);text-align:center;position:relative;overflow:hidden}
+.final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 50%,rgba(229,53,42,.09) 0%,transparent 70%);pointer-events:none}
+.final-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.final-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,10vw,96px);line-height:.92;margin-bottom:1.2rem}
+.final-h .r{color:var(--red)}
+.final-copy{font-size:clamp(15px,2vw,18px);color:var(--muted);line-height:1.75;max-width:480px;margin:0 auto 1rem}
+.final-copy strong{color:var(--white)}
+.final-sub{font-size:13px;color:rgba(106,133,170,.6);margin-bottom:2.5rem}
+.btn-final{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;font-family:'Syne',sans-serif;font-size:16px;font-weight:800;padding:18px 44px;border-radius:12px;border:none;cursor:pointer;text-decoration:none;box-shadow:0 10px 40px rgba(229,53,42,.42);transition:transform .2s,box-shadow .2s}
+.btn-final:hover{transform:translateY(-3px);box-shadow:0 20px 56px rgba(229,53,42,.55)}
+
+/* FOOTER */
+footer{background:var(--navy2);border-top:1px solid var(--border);padding:2rem clamp(1rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-l{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:rgba(238,243,255,.35)}
+.foot-r{font-size:11px;color:rgba(106,133,170,.35)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.hero-inner>*{opacity:0;animation:fadeUp .65s ease forwards}
+.hero-inner>*:nth-child(1){animation-delay:.05s}
+.hero-inner>*:nth-child(2){animation-delay:.12s}
+.hero-inner>*:nth-child(3){animation-delay:.2s}
+.hero-inner>*:nth-child(4){animation-delay:.3s}
+.hero-inner>*:nth-child(5){animation-delay:.4s}
+.hero-inner>*:nth-child(6){animation-delay:.48s}
+.hero-inner>*:nth-child(7){animation-delay:.54s}
+.hero-inner>*:nth-child(8){animation-delay:.6s}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:800px){
+  .who-inner{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .cd-sep{display:none}
+}
+@media(max-width:480px){
+  .cd-n{font-size:52px}
+  .btn-tg{padding:16px 28px;font-size:14px}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="t-track" id="tkr">
+    <span>24 de Abril às 18h — Live ao vivo</span>
+    <span>Vagas limitadas</span>
+    <span>Grupo VIP no Telegram</span>
+    <span>Remova negativações indevidas</span>
+    <span>Restaure seu crédito de vez</span>
+    <span>JustHelp Restauração de Crédito</span>
+    <span>24 de Abril às 18h — Live ao vivo</span>
+    <span>Vagas limitadas</span>
+    <span>Grupo VIP no Telegram</span>
+    <span>Remova negativações indevidas</span>
+    <span>Restaure seu crédito de vez</span>
+    <span>JustHelp Restauração de Crédito</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <img src="https://res.cloudinary.com/dmdaiwkyl/image/upload/v1776279350/Feir%C3%A3o_Restaura_Cr%C3%A9dito_Transparente_sqevwz.png"
+       alt="Feirão Restaura Crédito — JustHelp"
+       class="nav-logo" id="navLogo">
+  <a href="https://t.me/+q1GjZDvIrWEzYzUx" target="_blank" class="nav-cta">Garantir Vaga →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"><div class="orb"></div></div>
+  <div class="grid-bg"></div>
+  <div class="vig"></div>
+
+  <div class="hero-inner">
+    <div class="event-tag"><span class="pulse"></span> Live ao vivo · 24 de Abril às 18h00</div>
+
+    <p class="hero-kicker">Feirão Restaura Crédito — JustHelp</p>
+
+    <h1 class="hero-h1">
+      <span class="h1-w">Seu nome</span>
+      <span class="h1-r">limpo</span>
+      <span class="h1-o">de vez.</span>
+    </h1>
+
+    <p class="hero-copy">
+      Você está cansado de ter seu CPF bloqueado, cartão negado e crédito na gaveta?
+      <strong>No dia 24 de Abril às 18h, a equipe jurídica da JustHelp vai ao vivo</strong> para te mostrar como remover negativações de forma legal e definitiva.
+    </p>
+
+    <p class="hero-copy2">
+      Não é negociação. Não é parcelamento. É remoção técnica — e você vai entender tudo na live, gratuitamente.
+    </p>
+
+    <a href="https://t.me/+q1GjZDvIrWEzYzUx" target="_blank" class="btn-tg">
+      Entrar no Grupo Agora — É Gratuito
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+
+    <p class="hero-urgency">Vagas limitadas — somente os primeiros inscritos garantem acesso</p>
+
+    <div class="date-row">
+      <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Quinta-feira, <strong>24 de Abril de 2026 · 18h00</strong> &nbsp;·&nbsp; 100% online e gratuito
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="cd">
+  <p class="cd-label">A live começa em</p>
+  <div class="cd-row">
+    <div class="cd-unit"><span class="cd-n" id="dd">09</span><span class="cd-l">Dias</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-n" id="hh">00</span><span class="cd-l">Horas</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-n" id="mm">00</span><span class="cd-l">Minutos</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-n" id="ss">00</span><span class="cd-l">Segundos</span></div>
+  </div>
+</div>
+
+<!-- DOR -->
+<section class="section">
+  <div class="s-inner">
+    <p class="eyebrow reveal">Você se identifica com isso?</p>
+    <h2 class="big-h reveal">A dívida já passou, mas o <em>bloqueio continua.</em></h2>
+    <p class="section-lead reveal">Milhares de brasileiros pagam ou nem devem mais, mas ainda estão negativados por erro, prazo vencido ou abuso dos credores. Isso tem solução jurídica.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-icon">🚫</div>
+        <h3 class="pain-title">Cartão negado na hora H</h3>
+        <p class="pain-text">Passa vergonha na frente de todo mundo — e muitas vezes nem deve mais o que está bloqueando seu crédito.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">📉</div>
+        <h3 class="pain-title">Score no chão sem motivo</h3>
+        <p class="pain-text">Negativações indevidas, juros abusivos e cobranças que já prescreveram derrubam seu score mesmo que você pague tudo em dia.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">🏦</div>
+        <h3 class="pain-title">Banco fecha todas as portas</h3>
+        <p class="pain-text">Financiamento negado, limite zero, conta bloqueada. Seu nome sujo vira uma barreira em tudo: emprego, aluguel, crédito.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-icon">😤</div>
+        <h3 class="pain-title">Tentou tudo e não resolveu</h3>
+        <p class="pain-text">Já foi ao Serasa, já ligou pro banco, já tentou parcelar. Mas o nome continua sujo e ninguém te dá uma solução de verdade.</p>
+      </div>
+    </div>
+
+    <!-- O QUE VOCÊ VAI TER -->
+    <p class="eyebrow reveal">O que você vai ter acesso na live</p>
+    <h2 class="big-h reveal">Estratégias reais para <em>restaurar seu crédito</em></h2>
+    <p class="section-lead reveal">Nosso time jurídico vai revelar ao vivo as táticas que usamos para remover negativações indevidas — e as condições exclusivas para quem entrar no grupo hoje.</p>
+
+    <div class="get-grid">
+      <div class="get-card reveal">
+        <div class="get-num">01</div>
+        <h3 class="get-title">Como funciona a remoção jurídica</h3>
+        <p class="get-text">Entenda como o CDC artigos 42 e 43 protegem você e obrigam os credores a remover cobranças indevidas, prescritas ou abusivas.</p>
+      </div>
+      <div class="get-card reveal">
+        <div class="get-num">02</div>
+        <h3 class="get-title">Dívidas que podem ser removidas</h3>
+        <p class="get-text">Descubra quais apontamentos no Serasa e SPC têm irregularidades que permitem a remoção sem precisar pagar nada.</p>
+      </div>
+      <div class="get-card reveal">
+        <div class="get-num">03</div>
+        <h3 class="get-title">Como aumentar seu score rápido</h3>
+        <p class="get-text">Técnicas práticas para elevar seu score em semanas e voltar a ter acesso a crédito, financiamentos e cartões no mercado.</p>
+      </div>
+      <div class="get-card reveal">
+        <div class="get-num">04</div>
+        <h3 class="get-title">Análise ao vivo do seu caso</h3>
+        <p class="get-text">Tire dúvidas em tempo real com a equipe da JustHelp. Mande seu caso no chat e receba orientação jurídica na hora.</p>
+      </div>
+      <div class="get-card reveal">
+        <div class="get-num">05</div>
+        <h3 class="get-title">Processo em até 30 dias</h3>
+        <p class="get-text">Nosso processo vai do diagnóstico completo à remoção das negativações em até 30 dias, com acompanhamento em cada etapa.</p>
+      </div>
+      <div class="get-card reveal">
+        <div class="get-num">06</div>
+        <h3 class="get-title">Condição especial na live</h3>
+        <p class="get-text">Quem participar do grupo receberá uma condição exclusiva para iniciar o processo de restauração com a equipe JustHelp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<div class="who">
+  <div class="who-inner">
+    <div>
+      <p class="eyebrow reveal">Para quem é esta live</p>
+      <h2 class="big-h reveal" style="max-width:400px">Você <em>precisa</em> estar aqui se...</h2>
+      <ul class="who-list reveal" style="margin-top:1.5rem">
+        <li>Tem o nome negativado no Serasa ou SPC</li>
+        <li>Já pagou ou acha que a dívida prescreveu</li>
+        <li>Teve cartão, financiamento ou crédito negado</li>
+        <li>Quer saber se pode remover as negativações sem pagar</li>
+        <li>Está cansado de tentativas que não funcionam</li>
+        <li>Quer recuperar sua liberdade financeira de vez</li>
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow reveal" style="margin-top:0">Esta live não é para você se...</p>
+      <ul class="who-list no reveal" style="margin-top:calc(1.5rem + 2.2rem)">
+        <li>Está em dia com todas as obrigações e sem restrições</li>
+        <li>Não tem interesse em entender seus direitos como consumidor</li>
+        <li>Acredita que só parcelamento resolve negativação</li>
+        <li>Já tem score alto e crédito liberado em todos os bancos</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat reveal"><div class="stat-n">847+</div><div class="stat-l">Nomes limpos</div></div>
+    <div class="stat reveal"><div class="stat-n">R$2M+</div><div class="stat-l">Dívidas resolvidas</div></div>
+    <div class="stat reveal"><div class="stat-n">30</div><div class="stat-l">Dias em média</div></div>
+    <div class="stat reveal"><div class="stat-n">98%</div><div class="stat-l">Clientes satisfeitos</div></div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="final-inner">
+    <h2 class="final-h reveal">FALTAM<br><span class="r"><span id="final-days">9</span> DIAS.</span></h2>
+    <p class="final-copy reveal">
+      <strong>Dia 24 de Abril às 18h00</strong>, a JustHelp vai ao vivo para te mostrar como limpar seu nome de forma legal e definitiva.
+    </p>
+    <p class="final-sub reveal">Entre agora no grupo do Telegram e garanta seu lugar — vagas limitadas.</p>
+    <a href="https://t.me/+q1GjZDvIrWEzYzUx" target="_blank" class="btn-final reveal">
+      Quero Entrar no Grupo Agora
+      <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-l">Feirão Restaura Crédito — JustHelp</span>
+  <span class="foot-r">© 2026 JustHelp Restauração de Crédito. Todos os direitos reservados.</span>
+</footer>
+
+<script>
+// Logo: detecta se precisa inverter para aparecer no fundo escuro
+const logo = document.getElementById('navLogo');
+logo.addEventListener('load', function() {
+  try {
+    const c = document.createElement('canvas');
+    c.width = 10; c.height = 10;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(logo, 0, 0, 10, 10);
+    const d = ctx.getImageData(0, 0, 10, 10).data;
+    let dark = 0;
+    for (let i = 0; i < d.length; i += 4) {
+      if (d[i] < 80 && d[i+1] < 80 && d[i+2] < 80 && d[i+3] > 120) dark++;
+    }
+    if (dark > 15) logo.style.filter = 'brightness(0) invert(1)';
+  } catch(e) {}
+});
+
+// Countdown — alvo: 24 de Abril de 2026 às 18h no horário de Brasília
+function tick() {
+  const now = new Date();
+  const target = new Date('2026-04-24T18:00:00-03:00'); // 18h Brasília
+  const diff = Math.max(0, target - now);
+
+  const days  = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff % 86400000) / 3600000);
+  const mins  = Math.floor((diff % 3600000) / 60000);
+  const secs  = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('dd').textContent = String(days).padStart(2, '0');
+  document.getElementById('hh').textContent = String(hours).padStart(2, '0');
+  document.getElementById('mm').textContent = String(mins).padStart(2, '0');
+  document.getElementById('ss').textContent = String(secs).padStart(2, '0');
+  const fd = document.getElementById('final-days');
+  if (fd) fd.textContent = days;
+}
+tick();
+setInterval(tick, 1000);
+
+// Scroll reveal
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); }),
+  { threshold: 0.1 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Ticker duplicate
+const t = document.getElementById('tkr');
+t.innerHTML += t.innerHTML;
+</script>
+</body>
+</html>
